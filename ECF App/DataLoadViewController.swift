@@ -10,18 +10,21 @@ import UIKit
 
 class DataLoadViewController: UIViewController {
 
-    var csvFilenames : [String] = ["grades201901", "grades201907"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         for csv in csvFilenames {
             let dataString : String = stringFromCSV(fileName: csv)!
             var rows = dataString.components(separatedBy: "\n")
             rows.remove(at: 0)
             var csv : [PlayerRecord] = []
+            
+            var names : [String] = []
             /*"308000G","Belur, Ankita","F","","A",76,61,35,"A",89,71,87,"Middlesex Juniors","Barnet Knights","Barnet Juniors","England",,,,*/
             for row in rows {
                 
@@ -64,21 +67,21 @@ class DataLoadViewController: UIViewController {
                 
                 let columns = values
                 /*
-                record.reference = columns[0]
-                record.name = columns[1] + "," + columns[2]
-                record.sex = columns[3]
-                record.standardCategory = columns[5]
-                record.currentStandard = Int(columns[6]) ?? 0
-                record.previousStandard = Int(columns[7]) ?? 0
-                record.standardGamesPlayed = Int(columns[8]) ?? 0
-                record.rapidCategory = columns[9]
-                record.currentRapid = Int(columns[10]) ?? 0
-                record.previousRapid = Int(columns[11]) ?? 0
-                record.rapidGamesPlayed = Int(columns[12]) ?? 0
-                record.clubs = [columns[13], columns[14], columns[15], columns[16], columns[17], columns[18]]
-                record.fideCode = Int(columns[19]) ?? 0
-                record.nation = columns[20]
-                */
+                 record.reference = columns[0]
+                 record.name = columns[1] + "," + columns[2]
+                 record.sex = columns[3]
+                 record.standardCategory = columns[5]
+                 record.currentStandard = Int(columns[6]) ?? 0
+                 record.previousStandard = Int(columns[7]) ?? 0
+                 record.standardGamesPlayed = Int(columns[8]) ?? 0
+                 record.rapidCategory = columns[9]
+                 record.currentRapid = Int(columns[10]) ?? 0
+                 record.previousRapid = Int(columns[11]) ?? 0
+                 record.rapidGamesPlayed = Int(columns[12]) ?? 0
+                 record.clubs = [columns[13], columns[14], columns[15], columns[16], columns[17], columns[18]]
+                 record.fideCode = Int(columns[19]) ?? 0
+                 record.nation = columns[20]
+                 */
                 if columns.count < 20 {
                     print(columns)
                 }
@@ -99,17 +102,17 @@ class DataLoadViewController: UIViewController {
                         fideCode : Int(columns[18]) ?? 0,
                         nation : columns[19]
                     )
-                    
+                    names.append(columns[0])
                     csv.append(record)
                 }
                 
             }
             data.append(csv)
+            dataLookup.append(names)
         }
         print(data[0][0])
-        print("um")
-    
-        
+        performSegue(withIdentifier: "dataLoaded", sender: nil)
+        print("test")
     }
     
 
