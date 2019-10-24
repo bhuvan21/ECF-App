@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21230D74235E04B5007EC366 /* grades201901.csv in Resources */ = {isa = PBXBuildFile; fileRef = 21230D72235E04B5007EC366 /* grades201901.csv */; };
+		21230D75235E04B5007EC366 /* grades201907.csv in Resources */ = {isa = PBXBuildFile; fileRef = 21230D73235E04B5007EC366 /* grades201907.csv */; };
+		21D9511D235F324B00AF7785 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D9511C235F324B00AF7785 /* LeaderboardViewController.swift */; };
+		21D9511F235F355F00AF7785 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D9511E235F355F00AF7785 /* PlayerTableViewCell.swift */; };
 		8C1F24832306E66C00A3BB0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F24822306E66C00A3BB0F /* AppDelegate.swift */; };
 		8C1F248A2306E66C00A3BB0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1F24882306E66C00A3BB0F /* Main.storyboard */; };
 		8C1F248C2306E67200A3BB0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1F248B2306E67200A3BB0F /* Assets.xcassets */; };
@@ -15,8 +19,6 @@
 		8C1F24A52306E67300A3BB0F /* ECF_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F24A42306E67300A3BB0F /* ECF_AppUITests.swift */; };
 		8C1F24B32306EE2E00A3BB0F /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F24B22306EE2E00A3BB0F /* Singleton.swift */; };
 		8C1F24B52306F24E00A3BB0F /* DataLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F24B42306F24D00A3BB0F /* DataLoadViewController.swift */; };
-		8C1F24B92306F2CE00A3BB0F /* grades201907.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8C1F24B72306F2CE00A3BB0F /* grades201907.csv */; };
-		8C1F24BA2306F2CE00A3BB0F /* grades201901.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8C1F24B82306F2CE00A3BB0F /* grades201901.csv */; };
 		8C5C2A7E23080D88002D4201 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5C2A7D23080D88002D4201 /* ProfileViewController.swift */; };
 		8C5C2A8023082E38002D4201 /* ScoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5C2A7F23082E38002D4201 /* ScoresTableViewCell.swift */; };
 		8C5C2A8223083EAC002D4201 /* ClubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5C2A8123083EAC002D4201 /* ClubCollectionViewCell.swift */; };
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21230D72235E04B5007EC366 /* grades201901.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grades201901.csv; sourceTree = "<group>"; };
+		21230D73235E04B5007EC366 /* grades201907.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grades201907.csv; sourceTree = "<group>"; };
+		21D9511C235F324B00AF7785 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		21D9511E235F355F00AF7785 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		8C1F247F2306E66C00A3BB0F /* ECF App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECF App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1F24822306E66C00A3BB0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C1F24892306E66C00A3BB0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,8 +61,6 @@
 		8C1F24A62306E67300A3BB0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C1F24B22306EE2E00A3BB0F /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		8C1F24B42306F24D00A3BB0F /* DataLoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadViewController.swift; sourceTree = "<group>"; };
-		8C1F24B72306F2CE00A3BB0F /* grades201907.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = grades201907.csv; path = ../../../../../../Downloads/grades201907.csv; sourceTree = "<group>"; };
-		8C1F24B82306F2CE00A3BB0F /* grades201901.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = grades201901.csv; path = ../../../../../../Downloads/grades201901.csv; sourceTree = "<group>"; };
 		8C5C2A7D23080D88002D4201 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8C5C2A7F23082E38002D4201 /* ScoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresTableViewCell.swift; sourceTree = "<group>"; };
 		8C5C2A8123083EAC002D4201 /* ClubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				8C1F24822306E66C00A3BB0F /* AppDelegate.swift */,
 				8C1F24882306E66C00A3BB0F /* Main.storyboard */,
 				8C5C2A8323083FBB002D4201 /* SettingsViewController.swift */,
+				21D9511C235F324B00AF7785 /* LeaderboardViewController.swift */,
+				21D9511E235F355F00AF7785 /* PlayerTableViewCell.swift */,
 				8C5C2A8123083EAC002D4201 /* ClubCollectionViewCell.swift */,
 				8C5C2A7F23082E38002D4201 /* ScoresTableViewCell.swift */,
 				8C5C2A7D23080D88002D4201 /* ProfileViewController.swift */,
@@ -148,8 +154,8 @@
 		8C1F24B62306F2BA00A3BB0F /* CSVs */ = {
 			isa = PBXGroup;
 			children = (
-				8C1F24B82306F2CE00A3BB0F /* grades201901.csv */,
-				8C1F24B72306F2CE00A3BB0F /* grades201907.csv */,
+				21230D72235E04B5007EC366 /* grades201901.csv */,
+				21230D73235E04B5007EC366 /* grades201907.csv */,
 			);
 			path = CSVs;
 			sourceTree = "<group>";
@@ -259,10 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C1F248F2306E67200A3BB0F /* LaunchScreen.storyboard in Resources */,
+				21230D74235E04B5007EC366 /* grades201901.csv in Resources */,
 				8C1F248C2306E67200A3BB0F /* Assets.xcassets in Resources */,
+				21230D75235E04B5007EC366 /* grades201907.csv in Resources */,
 				8C1F248A2306E66C00A3BB0F /* Main.storyboard in Resources */,
-				8C1F24BA2306F2CE00A3BB0F /* grades201901.csv in Resources */,
-				8C1F24B92306F2CE00A3BB0F /* grades201907.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,8 +296,10 @@
 				8C5C2A8223083EAC002D4201 /* ClubCollectionViewCell.swift in Sources */,
 				8C1F24B32306EE2E00A3BB0F /* Singleton.swift in Sources */,
 				8C5C2A8423083FBB002D4201 /* SettingsViewController.swift in Sources */,
+				21D9511D235F324B00AF7785 /* LeaderboardViewController.swift in Sources */,
 				8C1F24832306E66C00A3BB0F /* AppDelegate.swift in Sources */,
 				8C5C2A7E23080D88002D4201 /* ProfileViewController.swift in Sources */,
+				21D9511F235F355F00AF7785 /* PlayerTableViewCell.swift in Sources */,
 				8C5C2A8023082E38002D4201 /* ScoresTableViewCell.swift in Sources */,
 				8C1F24B52306F24E00A3BB0F /* DataLoadViewController.swift in Sources */,
 			);

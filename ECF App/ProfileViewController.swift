@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         nameLabel.text = namesplit[1] + " " + namesplit[0]
         basicInfoLabel.text = records[0].clubs[0] + " | (" + records[0].sex + ")"
-        detailLabel.text = "#" + records[0].reference + ", FIDE: " + String(records[0].f]\]ideCode) + ", Nation: " + records[0].nation
+        detailLabel.text = "#" + records[0].reference + ", FIDE: " + String(records[0].fideCode) + ", Nation: " + records[0].nation
         
         var i : Int = 0;
 
@@ -83,7 +83,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath) as! ScoresTableViewCell
         
-        let index = (csvDates.count-1) - indexPath.row
+        let index = indexPath.row
         cell.dateLabel.text = csvDates[index]
         cell.standardCategoryLabel.text = standardCategories[index]
         cell.standardScoreLabel.text = String(standardScores[index])

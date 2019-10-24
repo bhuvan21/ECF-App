@@ -111,8 +111,15 @@ class DataLoadViewController: UIViewController {
             dataLookup.append(names)
         }
         print(data[0][0])
+        
+        for player in data[0] {
+            recentData.append(player)
+        }
+
+        sortedByRating = recentData.sorted(by: {$0.currentStandard >= $1.currentStandard})
+
         performSegue(withIdentifier: "dataLoaded", sender: nil)
-        print("test")
+
     }
     
 
