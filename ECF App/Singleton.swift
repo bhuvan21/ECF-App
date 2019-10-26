@@ -28,36 +28,51 @@ struct PlayerRecord {
 var data : [[PlayerRecord]] = [];
 var dataLookup : [[String]] = [];
 
-func getRecords(referenceCode:String) ->[PlayerRecord] {
+func getRecords(referenceCode:String) ->(records:[PlayerRecord], dates:[String]) {
     var records : [PlayerRecord] = []
+    var dates : [String] = []
     var i : Int = 0
     for nameList in dataLookup {
         
         let index = nameList.firstIndex(of: referenceCode)
-
-        records.append(data[i][index ?? 0])
+        if !(index ?? -1 == -1) {
+            records.append(data[i][index!])
+            dates.append(csvDates[i])
+        }
+        
         i = i + 1
     }
-    return records
+    return (records, dates)
 }
 
 
 var recentData : [PlayerRecord] = [];
 
 var sortedByRating : [PlayerRecord] = []
+var sortedByRapid: [PlayerRecord] = []
 
 
 
+var csvFilenames : [String] = ["grades201801", "grades201807", "grades201901", "grades201907"]
+var csvDates : [String] = ["01/18", "07/18" , "01/19", "07/19"]
 
-var csvFilenames : [String] = ["grades201907", "grades201901"]
-var csvDates : [String] = ["07/19", "01/19"]
-
-var playerReference : String = ""
+var playerReference : String = "308000G"
 
 
 var flagDict : [String:String] = ["ENG":"🏴󠁧󠁢󠁥󠁮󠁧󠁿", "USA":"🇺🇸", "RUS":"🇷🇺", "POL":"🇵🇱", "CHN":"🇨🇳", "FRA":"🇫🇷", "NED":"🇳🇱", "UKR":"🇺🇦", "IND":"🇮🇳", "ESP":"🇪🇸", "HUN":"🇭🇺", "ARM":"🇦🇲", "AZE":"🇦🇿", "BLR":"🇧🇾", "SWE":"🇸🇪", "VIE":"🇻🇳", "CZE":"🇨🇿", "CRO":"🇭🇷", "GEO":"🇬🇪", "ISR":"🇮🇱", "ROU":"🇷🇴", "GER":"🇩🇪", "NOR":"🇳🇴", "ITA":"🇮🇹", "MAS":"🇲🇾", "SRB":"🇷🇸", "KAZ":"🇰🇿", "SUI":"🇨🇭", "ISL":"🇮🇸"];
 
+var countryList = ["ENG", "USA", "RUS", "POL", "CHN", "FRA", "NED", "UKR", "IND", "ESP", "HUN", "ARM", "AZE", "BLR", "SWE", "VIE", "CZE", "CRO", "GEO", "ISR", "ROU", "GER", "NOR", "ITA", "MAS", "SRB", "KAZ", "SUI", "ISL"]
 
 func countryToFlag(country: String) -> String {
     return flagDict[country]!
 }
+
+
+struct filterSettings {
+    var sex : String
+    var cap : Int
+    var country : String
+    var gameType : String
+}
+
+var filterPrefs = filterSettings(sex: "A", cap: 300, country: "ALL", gameType:"S")

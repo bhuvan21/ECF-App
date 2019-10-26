@@ -112,11 +112,12 @@ class DataLoadViewController: UIViewController {
         }
         print(data[0][0])
         
-        for player in data[0] {
+        for player in data[3] {
             recentData.append(player)
         }
 
         sortedByRating = recentData.sorted(by: {$0.currentStandard >= $1.currentStandard})
+        sortedByRapid = recentData.sorted(by: {$0.currentRapid >= $1.currentRapid})
 
         performSegue(withIdentifier: "dataLoaded", sender: nil)
 

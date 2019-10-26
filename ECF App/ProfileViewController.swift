@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     var playerLookup : String = "308000G";
+    var isDetail = false
     var records : [PlayerRecord] = []
     
     
@@ -26,6 +27,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var standardCategories : [String] = []
     var rapidScores : [Int] = []
     var rapidCategories : [String] = []
+    var dataDates : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +41,22 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func reloadData() {
-        playerLookup = playerReference
+        print("reloading")
+        if isDetail == false {
+            playerLookup = playerReference
+        }
+        print(playerLookup)
+        
         standardScores = []
         standardCategories = []
         rapidScores = []
         rapidCategories = []
+        dataDates = []
         // Do any additional setup after loading the view.
-        records = getRecords(referenceCode: playerLookup)
+        let raw = getRecords(referenceCode: playerLookup)
+        records = raw.0
+        print(records)
+        let dates = raw.1
         let namesplit = records[0].name.components(separatedBy: ",")
         
         nameLabel.text = namesplit[1] + " " + namesplit[0]
@@ -55,6 +66,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         var i : Int = 0;
 
         for s in records.reversed() {
+            dataDates.append(dates[(dates.count-i)-1])
             standardScores.append(s.currentStandard)
             if s.standardCategory == "" {
                 standardCategories.append("None")
@@ -84,7 +96,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath) as! ScoresTableViewCell
         
         let index = indexPath.row
-        cell.dateLabel.text = csvDates[index]
+        cell.dateLabel.text = dataDates[index]
         cell.standardCategoryLabel.text = standardCategories[index]
         cell.standardScoreLabel.text = String(standardScores[index])
         cell.rapidCategoryLabel.text = rapidCategories[index]
