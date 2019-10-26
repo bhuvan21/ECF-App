@@ -112,7 +112,7 @@ class DataLoadViewController: UIViewController {
         }
         print(data[0][0])
         
-        for player in data[3] {
+        for player in data[11] {
             recentData.append(player)
         }
 

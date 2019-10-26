@@ -15,6 +15,7 @@ class LeaderboardFilterViewController: UIViewController, UIPickerViewDataSource,
     @IBOutlet weak var wheel: UIPickerView!
     @IBOutlet weak var gameTypeSwitch: UISwitch!
     
+    @IBOutlet weak var ratingShow: UILabel!
     
     
     var parentVC : LeaderboardViewController? = nil
@@ -23,7 +24,32 @@ class LeaderboardFilterViewController: UIViewController, UIPickerViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
+        
+        slider.setValue(Float(filterPrefs.cap), animated: true)
+        if filterPrefs.gameType == "S" {
+            gameTypeSwitch.setOn(false, animated: true)
+        }
+        else {
+            gameTypeSwitch.setOn(true, animated: true)
+        }
+        if filterPrefs.country == "ALL" {
+            wheel.selectRow(0, inComponent: 0, animated: true)
+        }
+        else {
+            wheel.selectRow(1 + countryList.firstIndex(of: filterPrefs.country)!, inComponent: 0, animated: true)
+        }
+        if filterPrefs.sex == "M" {
+            segmentControl.selectedSegmentIndex = 0
+        }
+        else if filterPrefs.sex == "F" {
+            segmentControl.selectedSegmentIndex = 1
+        }
+        else {
+            segmentControl.selectedSegmentIndex = 2
+        }
+        
+        ratingShow.text = "Rating Cap: " + String(filterPrefs.cap)
     }
     
 
@@ -49,6 +75,7 @@ class LeaderboardFilterViewController: UIViewController, UIPickerViewDataSource,
     }
     @IBAction func ratingCapChanges(_ sender: UISlider) {
         filterPrefs.cap = Int(slider.value)
+        ratingShow.text = "Rating Cap:" + String(Int(slider.value))
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

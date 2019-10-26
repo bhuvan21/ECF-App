@@ -28,6 +28,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var rapidScores : [Int] = []
     var rapidCategories : [String] = []
     var dataDates : [String] = []
+    var clubList : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
         let raw = getRecords(referenceCode: playerLookup)
         records = raw.0
-        print(records)
+
         let dates = raw.1
         let namesplit = records[0].name.components(separatedBy: ",")
         
@@ -84,33 +85,53 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             i = i + 1
         }
+        
+        clubList = []
+        for r in records {
+            for c in r.clubs {
+                if !clubList.contains(c) {
+                    clubList.append(c)
+                }
+            }
+        }
+        
+        
         tableView.reloadData()
         collectionView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return records.count
+        return records.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath) as! ScoresTableViewCell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "title", for: indexPath) as! ScoresTableViewCell
+
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath) as! ScoresTableViewCell
+            
+            let index = indexPath.row - 1
+            cell.dateLabel.text = dataDates[index]
+            cell.standardCategoryLabel.text = standardCategories[index]
+            cell.standardScoreLabel.text = String(standardScores[index])
+            cell.rapidCategoryLabel.text = rapidCategories[index]
+            cell.rapidScoreLabel.text = String(rapidScores[index])
+            return cell
+        }
         
-        let index = indexPath.row
-        cell.dateLabel.text = dataDates[index]
-        cell.standardCategoryLabel.text = standardCategories[index]
-        cell.standardScoreLabel.text = String(standardScores[index])
-        cell.rapidCategoryLabel.text = rapidCategories[index]
-        cell.rapidScoreLabel.text = String(rapidScores[index])
-        return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return records[0].clubs.count
+        return clubList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "club", for: indexPath) as! ClubCollectionViewCell
-        cell.clubLabel.text = records[0].clubs[indexPath.row]
+        cell.clubLabel.text = clubList[indexPath.row]
         return cell
     }
 

@@ -21,12 +21,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             for player in recentData {
                 var flag = true
                 for keyword in searchController.searchBar.text!.split(separator: " "){
-                    if !player.name.replacingOccurrences(of: ",", with: " ").contains(keyword) {
+                    if !player.name.replacingOccurrences(of: ",", with: " ").lowercased().contains(keyword.lowercased()) {
                         flag = false
                     }
                 }
                 if flag {
                     filtered.append(player)
+                }
+                
+                if filtered.count >= 100 {
+                    break
                 }
             }
         }
@@ -64,8 +68,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         let player = players[indexPath.row]
         cell.playerName.text = player.name + " (" + player.sex + ")"
-        cell.standardRating.text = String(player.currentStandard)
-        cell.rapidRating.text = String(player.currentRapid)
+        
+        if grandmasters.contains(String(player.fideCode)) {
+            cell.playerName.text = "GM " + player.name + " (" + player.sex + ")"
+        }
+        cell.standardRating.text = String(player.currentStandard) + player.standardCategory
+        cell.rapidRating.text = String(player.currentRapid) + player.rapidCategory
         if player.currentStandard - player.previousStandard > 0 {
             cell.extraInfo.text = "☝️"
         }

@@ -83,9 +83,16 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PLAYER") as! PlayerTableViewCell
         let player = filtered[indexPath.row]
+        
         cell.playerName.text = player.name + " (" + player.sex + ")"
-        cell.standardRating.text = String(player.currentStandard)
-        cell.rapidRating.text = String(player.currentRapid)
+        
+        if grandmasters.contains(String(player.fideCode)) {
+            cell.playerName.text = "GM " + player.name + " (" + player.sex + ")"
+        }
+        
+        
+        cell.standardRating.text = String(player.currentStandard) + player.standardCategory
+        cell.rapidRating.text = String(player.currentRapid) + player.rapidCategory
         if player.currentStandard - player.previousStandard > 0 {
             cell.extraInfo.text = "☝️"
         }
