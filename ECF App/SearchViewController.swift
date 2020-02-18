@@ -13,10 +13,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     var selectedPlayerCode : String = ""
+    var searching : Bool = false
     
     
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text!.count >= 3 {
+            searching = true
             filtered = []
             for player in recentData {
                 var flag = true
@@ -34,6 +36,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         }
+        else {
+            searching = false
+            var new_filtered : [PlayerRecord] = []
+            for code in (UserDefaults.standard.object(forKey: "favourites") as! [String]) {
+                new_filtered.append(getRecords(referenceCode: code).0.last!)
+            }
+            filtered = new_filtered
+        }
         tableView.reloadData()
     }
     
@@ -48,7 +58,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             return filtered.count
         }
         else {
-            return 100
+            return (UserDefaults.standard.object(forKey: "favourites") as! [String]).count
         }
         
     }
@@ -58,15 +68,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         var players : [PlayerRecord] = []
         
-        if searchController.searchBar.text != "" && searchController.searchBar.text!.count >= 3{
-            players = filtered
-        }
-        else {
-            players = recentData
-        }
-        
+        players = filtered
+        print(players)
+        print(indexPath.row)
         
         let player = players[indexPath.row]
+        print(player, "CELLFORROWAT")
         cell.playerName.text = player.name + " (" + player.sex + ")"
         
         if grandmasters.contains(String(player.fideCode)) {
@@ -103,15 +110,33 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 
         // Do any additional setup after loading the view.
         tableView.tableHeaderView = searchController.searchBar
+        if searchController.searchBar.text!.count < 3 {
+            var new_filtered : [PlayerRecord] = []
+            for code in (UserDefaults.standard.object(forKey: "favourites") as! [String]) {
+                print(code, getRecords(referenceCode: code).0[0])
+                new_filtered.append(getRecords(referenceCode: code).0.last!)
+            }
+            filtered = new_filtered
+            tableView.reloadData()
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if searchController.searchBar.text!.count < 3 {
+            var new_filtered : [PlayerRecord] = []
+            for code in (UserDefaults.standard.object(forKey: "favourites") as! [String]) {
+                print(code, getRecords(referenceCode: code).0.last!)
+                new_filtered.append(getRecords(referenceCode: code).0.last!)
+            }
+            filtered = new_filtered
+            tableView.reloadData()
+        }
+        print((UserDefaults.standard.object(forKey: "favourites") as! [String]).count, "COUNT")
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if searchController.isActive && searchController.searchBar.text != "" && searchController.searchBar.text!.count >= 3{
-            selectedPlayerCode = filtered[indexPath.row].reference
-        }
-        else {
-            selectedPlayerCode = recentData[indexPath.row].reference
-        }
+        
+        selectedPlayerCode = filtered[indexPath.row].reference
         performSegue(withIdentifier: "playerDetail", sender: nil)
     }
     
@@ -128,6 +153,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidDisappear(_ animated: Bool) {
         print("leaving")
+        
         searchController.isActive = false
     }
     

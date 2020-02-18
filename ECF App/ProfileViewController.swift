@@ -16,6 +16,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var selectMeButton: UIButton!
+    @IBOutlet weak var favouriteMeButton: UIButton!
+    
     
     
     var playerLookup : String = "308000G";
@@ -32,12 +35,36 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if (UserDefaults.standard.object(forKey: "first") == nil) && isDetail == false{
+            UserDefaults.standard.set(false, forKey: "first")
+            let myAlert = UIAlertController(title:"Choose Your Profile", message: "First time using this app? We don't yet know who you are so the 'My Profile' section currently displays a random user. To select yourself, find yourself on the search tab and click the person shaped button.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            myAlert.addAction(action)
+            self.present(myAlert, animated: true, completion: nil)
+            
+        }
+        if isDetail {
+            selectMeButton.isHidden = false
+        }
+        else {
+            selectMeButton.isHidden = true
+        }
+        
+        
         reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if (UserDefaults.standard.object(forKey: "favourites") as! [String]).contains(playerLookup) {
+            favouriteMeButton.setImage(UIImage(named:"filled"), for: .normal)
+        }
+        else {
+            favouriteMeButton.setImage(UIImage(named:"unfilled"), for: .normal)
+        }
+        
         reloadData()
     }
     
@@ -134,5 +161,50 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.clubLabel.text = clubList[indexPath.row]
         return cell
     }
+    
+    @IBAction func meSelected(_ sender: Any) {
+        
+        playerReference = playerLookup
+                   UserDefaults.standard.set(playerLookup, forKey: "identity")
+                   let myAlert = UIAlertController(title:"Succesfully set your identity", message: "", preferredStyle: .alert)
+                   let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                   myAlert.addAction(action)
+                   self.present(myAlert, animated: true, completion: nil)
+    }
+    
 
-}
+    @IBAction func meFavourited(_ sender: Any) {
+        
+       
+        
+        
+
+        let favs = UserDefaults.standard.object(forKey: "favourites") as! [String]
+            if favs.contains(playerLookup) {
+                print("contains")
+                var new_favs : [String] = favs
+                new_favs.remove(at: new_favs.index(of: playerLookup)!)
+                UserDefaults.standard.set(new_favs, forKey:"favourites")
+            }
+            else {
+                print("doesnt")
+                var new_favs : [String] = favs
+                new_favs.append(playerLookup)
+                
+                UserDefaults.standard.set(new_favs, forKey:"favourites")
+            }
+            print(favouriteMeButton.imageView!.image)
+            if favouriteMeButton.imageView!.image == UIImage(named: "unfilled") {
+                favouriteMeButton.setImage(UIImage(named:"filled"), for: .normal)
+                print("making filled")
+            }
+            else {
+                favouriteMeButton.setImage(UIImage(named:"unfilled"), for: .normal)
+                print("making unfilled")
+            }
+    }
+    
+        
+            
+        
+    }

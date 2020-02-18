@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PlayerRecord {
+struct PlayerRecord : Codable {
     var reference : String
     var name : String
     var sex : String
@@ -24,6 +24,9 @@ struct PlayerRecord {
     var fideCode : Int
     var nation : String
 }
+
+
+
 
 var data : [[PlayerRecord]] = [];
 var dataLookup : [[String]] = [];
@@ -53,8 +56,8 @@ var sortedByRapid: [PlayerRecord] = []
 
 
 
-var csvFilenames : [String] = ["grades201401", "grades201407", "grades201501", "grades201507", "grades201601", "grades201607", "grades201701", "grades201707", "grades201801", "grades201807", "grades201901", "grades201907"]
-var csvDates : [String] = ["01/14", "07/14", "01/15", "07/15", "01/16", "07/16", "01/17", "07/17", "01/18", "07/18" , "01/19", "07/19"]
+var csvFilenames : [String] = ["grades201401", "grades201407", "grades201501", "grades201507", "grades201601", "grades201607", "grades201701", "grades201707", "grades201801", "grades201807", "grades201901", "grades201907", "grades202001"]
+var csvDates : [String] = ["01/14", "07/14", "01/15", "07/15", "01/16", "07/16", "01/17", "07/17", "01/18", "07/18" , "01/19", "07/19", "01/20"]
 
 var playerReference : String = "308000G"
 

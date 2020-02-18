@@ -23,13 +23,16 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print("i loadd")
         refreshData()
     }
     
     func refreshData() {
         filtered = []
+        print(filterPrefs)
         if filterPrefs.gameType == "S" {
             baseFiltered = sortedByRating
+            print(baseFiltered[0])
         }
         else {
             baseFiltered = sortedByRapid
@@ -116,6 +119,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedPlayerCode = filtered[indexPath.row].reference
         performSegue(withIdentifier: "playerDetail", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -131,12 +135,13 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
             vc.parentVC = self
         }
         
+        
     }
-    
-    @IBAction func cancel(_ unwindSegue: UIStoryboardSegue) {
+    @IBAction func unwindToname(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source
         // Use data from the view controller which initiated the unwind segue
     }
+
     
 
 }
