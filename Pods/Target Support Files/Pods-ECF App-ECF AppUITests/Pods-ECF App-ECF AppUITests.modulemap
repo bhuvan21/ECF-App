@@ -1,0 +1,6 @@
+framework module Pods_ECF_App_ECF_AppUITests {
+  umbrella header "Pods-ECF App-ECF AppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

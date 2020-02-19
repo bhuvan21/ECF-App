@@ -20,6 +20,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         if searchController.searchBar.text!.count >= 3 {
             searching = true
             filtered = []
+            
             for player in recentData {
                 var flag = true
                 for keyword in searchController.searchBar.text!.split(separator: " "){
@@ -35,6 +36,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     break
                 }
             }
+            
         }
         else {
             searching = false
@@ -42,7 +44,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             for code in (UserDefaults.standard.object(forKey: "favourites") as! [String]) {
                 new_filtered.append(getRecords(referenceCode: code).0.last!)
             }
-            filtered = new_filtered
+            filtered = new_filtered.sorted { $0.name < $1.name}
         }
         tableView.reloadData()
     }
@@ -116,7 +118,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 print(code, getRecords(referenceCode: code).0[0])
                 new_filtered.append(getRecords(referenceCode: code).0.last!)
             }
-            filtered = new_filtered
+            filtered = new_filtered.sorted { $0.name < $1.name}
             tableView.reloadData()
         }
     }
@@ -128,7 +130,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 print(code, getRecords(referenceCode: code).0.last!)
                 new_filtered.append(getRecords(referenceCode: code).0.last!)
             }
-            filtered = new_filtered
+            filtered = new_filtered.sorted { $0.name < $1.name}
             tableView.reloadData()
         }
         print((UserDefaults.standard.object(forKey: "favourites") as! [String]).count, "COUNT")

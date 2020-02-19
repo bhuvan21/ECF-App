@@ -59,7 +59,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidAppear(animated)
         
         if (UserDefaults.standard.object(forKey: "favourites") as! [String]).contains(playerLookup) {
-            favouriteMeButton.setImage(UIImage(named:"filled"), for: .normal)
+            if (UserDefaults.standard.object(forKey: "peers") as! [String]).contains(playerLookup) {
+                favouriteMeButton.setImage(UIImage(named:"peer"), for: .normal)
+            }
+            else {
+                favouriteMeButton.setImage(UIImage(named:"filled"), for: .normal)
+            }
+            
         }
         else {
             favouriteMeButton.setImage(UIImage(named:"unfilled"), for: .normal)
@@ -88,7 +94,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let namesplit = records[0].name.components(separatedBy: ",")
         
         nameLabel.text = namesplit[1] + " " + namesplit[0]
-        basicInfoLabel.text = records[0].clubs[0] + " | (" + records[0].sex + ")"
+        if records[0].sex == "" {
+            basicInfoLabel.text = records[0].clubs[0]
+        }
+        else {
+            basicInfoLabel.text = records[0].clubs[0] + " | (" + records[0].sex + ")"
+        }
+        
         detailLabel.text = "#" + records[0].reference + ", FIDE: " + String(records[0].fideCode) + ", Nation: " + records[0].nation
         
         var i : Int = 0;
@@ -180,31 +192,41 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
 
         let favs = UserDefaults.standard.object(forKey: "favourites") as! [String]
-            if favs.contains(playerLookup) {
-                print("contains")
-                var new_favs : [String] = favs
-                new_favs.remove(at: new_favs.index(of: playerLookup)!)
-                UserDefaults.standard.set(new_favs, forKey:"favourites")
-            }
-            else {
-                print("doesnt")
-                var new_favs : [String] = favs
-                new_favs.append(playerLookup)
-                
-                UserDefaults.standard.set(new_favs, forKey:"favourites")
-            }
-            print(favouriteMeButton.imageView!.image)
-            if favouriteMeButton.imageView!.image == UIImage(named: "unfilled") {
-                favouriteMeButton.setImage(UIImage(named:"filled"), for: .normal)
-                print("making filled")
-            }
-            else {
-                favouriteMeButton.setImage(UIImage(named:"unfilled"), for: .normal)
-                print("making unfilled")
-            }
+        let peers = UserDefaults.standard.object(forKey: "peers") as! [String]
+        
+        if favouriteMeButton.imageView!.image == UIImage(named: "unfilled") {
+            favouriteMeButton.setImage(UIImage(named:"filled"), for: .normal)
+            print("making filled")
+            var new_favs : [String] = favs
+            new_favs.append(playerLookup)
+            
+            UserDefaults.standard.set(new_favs, forKey:"favourites")
+        }
+        else if favouriteMeButton.imageView!.image == UIImage(named: "filled") {
+            favouriteMeButton.setImage(UIImage(named:"peer"), for: .normal)
+            print(UIImage(named:"peer"))
+            print("making peer")
+            var new_peers : [String] = peers
+            new_peers.append(playerLookup)
+            
+            UserDefaults.standard.set(new_peers, forKey:"peers")
+        }
+        else {
+            var new_favs : [String] = favs
+            var new_peers : [String] = peers
+            new_favs.remove(at: new_favs.index(of: playerLookup)!)
+            new_peers.remove(at: new_peers.index(of: playerLookup)!)
+            favouriteMeButton.setImage(UIImage(named:"unfilled"), for: .normal)
+            UserDefaults.standard.set(new_peers, forKey:"peers")
+            UserDefaults.standard.set(new_favs, forKey:"favourites")
+        }
+        
+        
+            
+            
     }
     
         
             
         
-    }
+}

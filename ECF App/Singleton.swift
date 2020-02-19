@@ -7,6 +7,28 @@
 //
 
 import Foundation
+import SQLite
+
+
+let table = Table("players")
+let identifier = Expression<Int>("identifier")
+let date = Expression<String>("date")
+let reference = Expression<String>("reference")
+let name = Expression<String>("name")
+let sex = Expression<String>("sex")
+let standardCategory = Expression<String>("standardCategory")
+let currentStandard = Expression<Int>("currentStandard")
+let rapidCategory = Expression<String>("rapidCategory")
+let currentRapid = Expression<Int>("currentRapid")
+let previousStandard = Expression<Int>("previousStandard")
+let previousRapid = Expression<Int>("previousRapid")
+let standardGamesPlayed = Expression<Int>("standardGamesPlayed")
+let rapidGamesPlayed = Expression<Int>("rapidGamesPlayed")
+let clubs = Expression<String>("clubs")
+let fideCode = Expression<Int>("fideCode")
+let nation = Expression<String>("nation")
+
+var database:Connection!
 
 struct PlayerRecord : Codable {
     var reference : String
@@ -31,6 +53,7 @@ struct PlayerRecord : Codable {
 var data : [[PlayerRecord]] = [];
 var dataLookup : [[String]] = [];
 
+/*
 func getRecords(referenceCode:String) ->(records:[PlayerRecord], dates:[String]) {
     var records : [PlayerRecord] = []
     var dates : [String] = []
@@ -47,6 +70,40 @@ func getRecords(referenceCode:String) ->(records:[PlayerRecord], dates:[String])
     }
     return (records, dates)
 }
+*/
+
+func getRecords(referenceCode:String) ->(records:[PlayerRecord], dates:[String]) {
+    var records : [PlayerRecord] = []
+    var dates : [String] = []
+    do {
+        let query = table.filter(reference == referenceCode)
+        
+        for player in try database.prepare(query) {
+            
+            records.append(rowToRecord(player: player))
+            dates.append(player[date].suffix(2) + "/" + player[date].suffix(4).prefix(2))
+        }
+        
+        return (records, dates)
+    }
+    catch {
+        print(error)
+        return([], [])
+    }
+}
+
+func rowToRecord(player:Row) ->PlayerRecord {
+    let clublist = player[clubs].split(separator: ",")
+    var newclubs : [String] = []
+    for c in clublist {
+        newclubs.append(String(c))
+    }
+    // 202001 --> 01/20
+    
+    let pr = PlayerRecord(reference: player[reference], name: player[name], sex: player[sex], standardCategory: player[standardCategory], currentStandard: player[currentStandard], previousStandard: player[previousStandard], standardGamesPlayed: player[standardGamesPlayed], rapidCategory: player[rapidCategory], currentRapid: player[currentRapid], previousRapid: player[previousRapid], rapidGamesPlayed: player[rapidGamesPlayed], clubs: newclubs, fideCode: player[fideCode], nation: player[nation])
+    
+    return pr
+}
 
 
 var recentData : [PlayerRecord] = [];
@@ -61,6 +118,7 @@ var csvDates : [String] = ["01/14", "07/14", "01/15", "07/15", "01/16", "07/16",
 
 var playerReference : String = "308000G"
 
+let newestDate = "202001"
 
 var flagDict : [String:String] = ["ENG":"🏴󠁧󠁢󠁥󠁮󠁧󠁿", "USA":"🇺🇸", "RUS":"🇷🇺", "POL":"🇵🇱", "CHN":"🇨🇳", "FRA":"🇫🇷", "NED":"🇳🇱", "UKR":"🇺🇦", "IND":"🇮🇳", "ESP":"🇪🇸", "HUN":"🇭🇺", "ARM":"🇦🇲", "AZE":"🇦🇿", "BLR":"🇧🇾", "SWE":"🇸🇪", "VIE":"🇻🇳", "CZE":"🇨🇿", "CRO":"🇭🇷", "GEO":"🇬🇪", "ISR":"🇮🇱", "ROU":"🇷🇴", "GER":"🇩🇪", "NOR":"🇳🇴", "ITA":"🇮🇹", "MAS":"🇲🇾", "SRB":"🇷🇸", "KAZ":"🇰🇿", "SUI":"🇨🇭", "ISL":"🇮🇸"];
 

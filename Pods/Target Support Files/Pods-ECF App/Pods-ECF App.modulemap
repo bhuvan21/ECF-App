@@ -1,0 +1,6 @@
+framework module Pods_ECF_App {
+  umbrella header "Pods-ECF App-umbrella.h"
+
+  export *
+  module * { export * }
+}

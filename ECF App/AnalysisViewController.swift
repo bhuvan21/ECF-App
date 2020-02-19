@@ -42,6 +42,8 @@ class AnalysisViewController: UIViewController {
         LineChartView.doubleTapToZoomEnabled = false
         LineChartView.leftAxis.axisMinimum = 0
         LineChartView.zoomOut()
+
+        
         if #available(iOS 13.0, *) {
             LineChartView.legend.textColor = .label
         } else {
@@ -139,7 +141,7 @@ class AnalysisViewController: UIViewController {
         set.mode = .cubicBezier
         set.cubicIntensity = 0.05
         LineChartView.xAxis.valueFormatter = formatter
-        
+        set.circleRadius = 5
         
     }
     
@@ -149,12 +151,15 @@ class AnalysisViewController: UIViewController {
         myRecords = getRecords(referenceCode: playerReference)
     
         othersRecords.append(myRecords)
-        for i in 0...(UserDefaults.standard.object(forKey: "favourites") as! [String]).count-1 {
-            if (UserDefaults.standard.object(forKey: "favourites") as! [String])[i] != playerReference {
-                othersRecords.append(getRecords(referenceCode: (UserDefaults.standard.object(forKey: "favourites") as! [String])[i]))
+        if (UserDefaults.standard.object(forKey: "peers") as! [String]).count != 0 {
+            for i in 0...(UserDefaults.standard.object(forKey: "peers") as! [String]).count-1 {
+                if (UserDefaults.standard.object(forKey: "peers") as! [String])[i] != playerReference {
+                    othersRecords.append(getRecords(referenceCode: (UserDefaults.standard.object(forKey: "peers") as! [String])[i]))
+                }
+                
             }
-            
         }
+        
         
         
         let formatter = ChartXAxisFormatter()
@@ -215,6 +220,7 @@ class AnalysisViewController: UIViewController {
             
             set.setCircleColor(colors[x])
             set.setColor(colors[x])
+            set.circleRadius = 5
 
             x += 1
         }
