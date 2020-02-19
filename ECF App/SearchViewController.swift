@@ -75,8 +75,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         print(indexPath.row)
         
         let player = players[indexPath.row]
-        print(player, "CELLFORROWAT")
-        cell.playerName.text = player.name + " (" + player.sex + ")"
+        if (UserDefaults.standard.object(forKey: "peers") as! [String]).contains(player.reference) {
+            cell.playerName.text = player.name + " (" + player.sex + ")" + " (Peer)"
+        }
+        else {
+            cell.playerName.text = player.name + " (" + player.sex + ")"
+        }
+        
         
         if grandmasters.contains(String(player.fideCode)) {
             cell.playerName.text = "GM " + player.name + " (" + player.sex + ")"

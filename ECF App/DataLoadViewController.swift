@@ -31,9 +31,7 @@ class DataLoadViewController: UIViewController {
         super.viewDidLoad()
         activity.startAnimating()
         
-        let empty : [String] = []
-        UserDefaults.standard.set(empty, forKey: "peers")
-        print("set")
+
         
         
         if UserDefaults.standard.object(forKey: "favourites") == nil {

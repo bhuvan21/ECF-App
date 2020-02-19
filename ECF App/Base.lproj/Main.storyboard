@@ -14,6 +14,7 @@
                 <navigationController id="zLF-Mw-OV0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Leaderboard" image="flag.fill" catalog="system" id="fAQ-b3-c71"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RLe-vS-Rnz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -133,7 +134,7 @@
             <objects>
                 <viewController id="zlt-Rs-aFd" customClass="LeaderboardFilterViewController" customModule="ECF_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3DN-je-Hjv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiF-AS-r8u">
@@ -527,14 +528,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="test" id="HEC-mg-leH" customClass="ScoresTableViewCell" customModule="ECF_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="354" height="41.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="28" width="354" height="41.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HEC-mg-leH" id="BWC-Rb-wZk">
-                                            <rect key="frame" x="0.0" y="0.0" width="354" height="41.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="41.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gl-iC-KI0">
-                                                    <rect key="frame" x="5" y="9.9999999999999982" width="80" height="21.333333333333329"/>
+                                                    <rect key="frame" x="5" y="10.000000000000002" width="80" height="21.666666666666671"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="mTM-d7-Fpj"/>
                                                     </constraints>
@@ -543,25 +544,25 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9L4-EY-KYA">
-                                                    <rect key="frame" x="100" y="9.9999999999999982" width="12" height="21.333333333333329"/>
+                                                    <rect key="frame" x="100" y="10.000000000000002" width="12" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mmq-GN-aAx">
-                                                    <rect key="frame" x="132" y="9.9999999999999982" width="30.666666666666657" height="21.333333333333329"/>
+                                                    <rect key="frame" x="132" y="10.000000000000002" width="30.666666666666657" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccs-2t-YOZ">
-                                                    <rect key="frame" x="271" y="9.9999999999999982" width="12" height="21.333333333333329"/>
+                                                    <rect key="frame" x="271" y="10.000000000000002" width="12" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyl-32-fmN">
-                                                    <rect key="frame" x="303" y="9.9999999999999982" width="31" height="21.333333333333329"/>
+                                                    <rect key="frame" x="303" y="10.000000000000002" width="31" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -594,14 +595,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="title" id="NWO-6P-2YG" customClass="ScoresTableViewCell" customModule="ECF_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="69.333332061767578" width="354" height="41.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="69.666667938232422" width="354" height="41.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NWO-6P-2YG" id="LK7-Ik-3gh">
-                                            <rect key="frame" x="0.0" y="0.0" width="354" height="41.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="41.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KZ-Fo-ZzJ">
-                                                    <rect key="frame" x="5" y="9.9999999999999982" width="60" height="21.333333333333329"/>
+                                                    <rect key="frame" x="5" y="10.000000000000002" width="60" height="21.666666666666671"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="0qH-G9-93b"/>
                                                     </constraints>
@@ -610,13 +611,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcD-Eg-3g7">
-                                                    <rect key="frame" x="95" y="9.9999999999999982" width="70" height="21.333333333333329"/>
+                                                    <rect key="frame" x="95" y="10.000000000000002" width="70" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rapid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrQ-S4-qok">
-                                                    <rect key="frame" x="275" y="9.9999999999999982" width="44" height="21.333333333333329"/>
+                                                    <rect key="frame" x="275" y="10.000000000000002" width="44" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -740,7 +741,8 @@
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xpE-7u-vP6">
                                     <rect key="frame" x="296.66666666666669" y="0.0" width="60" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="unfilled">
+                                    <state key="normal" image="peer">
+                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="black">
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                         </preferredSymbolConfiguration>
@@ -834,6 +836,7 @@
                 <navigationController id="fpL-dY-Ilb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="PzL-fH-Pif"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8wC-UA-DR2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -850,6 +853,7 @@
                 <navigationController id="9kE-VK-Eci" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Analysis" image="eye.fill" catalog="system" id="tVI-XB-v7M"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hKL-MF-abB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -866,6 +870,7 @@
                 <navigationController id="YVw-k0-Vnm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Profile" image="person.fill" catalog="system" id="aQR-4H-gwF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wwV-SO-nMK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -878,12 +883,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="eye.fill" catalog="system" width="32" height="32"/>
+        <image name="eye.fill" catalog="system" width="64" height="38"/>
         <image name="filter" width="512" height="512"/>
-        <image name="flag.fill" catalog="system" width="32" height="32"/>
-        <image name="magnifyingglass" catalog="system" width="32" height="32"/>
-        <image name="person.fill" catalog="system" width="32" height="32"/>
-        <image name="unfilled" width="30" height="30"/>
+        <image name="flag.fill" catalog="system" width="64" height="60"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="peer" width="30" height="30"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="s9f-Pb-rDY"/>
