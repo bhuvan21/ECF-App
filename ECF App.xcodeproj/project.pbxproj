@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		21230D74235E04B5007EC366 /* grades201901.csv in Resources */ = {isa = PBXBuildFile; fileRef = 21230D72235E04B5007EC366 /* grades201901.csv */; };
 		21230D75235E04B5007EC366 /* grades201907.csv in Resources */ = {isa = PBXBuildFile; fileRef = 21230D73235E04B5007EC366 /* grades201907.csv */; };
+		214C2D9A243742E10091B6A5 /* players.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 214C2D99243742E10091B6A5 /* players.sqlite3 */; };
 		2196366F23F96857006DBEAE /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2196366E23F96857006DBEAE /* AnalysisViewController.swift */; };
 		2196367123F96E1A006DBEAE /* ChartXAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2196367023F96E1A006DBEAE /* ChartXAxisFormatter.swift */; };
 		2196367323F9CB3B006DBEAE /* grades202001.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2196367223F9CB3B006DBEAE /* grades202001.csv */; };
-		2196368D23FC3D41006DBEAE /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2196368C23FC3D41006DBEAE /* SQLite.framework */; };
-		2196368E23FC3D42006DBEAE /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2196368C23FC3D41006DBEAE /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2196369423FC5757006DBEAE /* test.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 2196369323FC5757006DBEAE /* test.sqlite3 */; };
 		2196369823FCAAE2006DBEAE /* players.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 2196369723FCAAE2006DBEAE /* players.sqlite3 */; };
 		21BCAE4123623EDC007DB011 /* leaderborad.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BCAE4023623EDB007DB011 /* leaderborad.png */; };
@@ -68,30 +67,16 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		2196368F23FC3D42006DBEAE /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2196368E23FC3D42006DBEAE /* SQLite.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		18894F23FB4C552F3121BE22 /* Pods_ECF_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECF_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FB0EFC7ACC3E1C422327D6A /* Pods_ECF_App_ECF_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECF_App_ECF_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21230D72235E04B5007EC366 /* grades201901.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grades201901.csv; sourceTree = "<group>"; };
 		21230D73235E04B5007EC366 /* grades201907.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grades201907.csv; sourceTree = "<group>"; };
+		214C2D99243742E10091B6A5 /* players.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = players.sqlite3; path = "../../../../../../Volumes/NO NAME/players.sqlite3"; sourceTree = "<group>"; };
 		2196366E23F96857006DBEAE /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		2196367023F96E1A006DBEAE /* ChartXAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisFormatter.swift; sourceTree = "<group>"; };
 		2196367223F9CB3B006DBEAE /* grades202001.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grades202001.csv; sourceTree = "<group>"; };
 		2196368C23FC3D41006DBEAE /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2196369023FC4E6A006DBEAE /* db.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.sqlite3; path = "../../../../../../Volumes/NO NAME/db.sqlite3"; sourceTree = "<group>"; };
 		2196369323FC5757006DBEAE /* test.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.sqlite3; sourceTree = "<group>"; };
 		2196369723FCAAE2006DBEAE /* players.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = players.sqlite3; path = "../../../../../../Volumes/NO NAME/players.sqlite3"; sourceTree = "<group>"; };
 		21BCAE4023623EDB007DB011 /* leaderborad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaderborad.png; sourceTree = "<group>"; };
@@ -144,7 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2196368D23FC3D41006DBEAE /* SQLite.framework in Frameworks */,
 				BEB3368CC47567AF0577B59C /* Pods_ECF_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,9 +177,9 @@
 		8C1F24812306E66C00A3BB0F /* ECF App */ = {
 			isa = PBXGroup;
 			children = (
-				2196369023FC4E6A006DBEAE /* db.sqlite3 */,
 				2196369323FC5757006DBEAE /* test.sqlite3 */,
 				2196369723FCAAE2006DBEAE /* players.sqlite3 */,
+				214C2D99243742E10091B6A5 /* players.sqlite3 */,
 				21BCAE4023623EDB007DB011 /* leaderborad.png */,
 				21BCAE482363C51B007DB011 /* filter.png */,
 				21BCAE4A2363D230007DB011 /* filter.svg */,
@@ -296,7 +280,6 @@
 				8C1F247C2306E66C00A3BB0F /* Frameworks */,
 				8C1F247D2306E66C00A3BB0F /* Resources */,
 				6E2973AD0E353F22239DCAA2 /* [CP] Embed Pods Frameworks */,
-				2196368F23FC3D42006DBEAE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -397,6 +380,7 @@
 				21BCAE542364BB80007DB011 /* grades201607.csv in Resources */,
 				21BCAE582364BB80007DB011 /* grades201707.csv in Resources */,
 				21BCAE43236241C4007DB011 /* grades201801.csv in Resources */,
+				214C2D9A243742E10091B6A5 /* players.sqlite3 in Resources */,
 				2196369423FC5757006DBEAE /* test.sqlite3 in Resources */,
 				8C1F248F2306E67200A3BB0F /* LaunchScreen.storyboard in Resources */,
 				21BCAE592364BB80007DB011 /* grades201701.csv in Resources */,
@@ -734,7 +718,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2B66H5BK49;
 				INFOPLIST_FILE = "ECF App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -754,7 +738,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2B66H5BK49;
 				INFOPLIST_FILE = "ECF App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

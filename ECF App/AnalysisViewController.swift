@@ -27,7 +27,7 @@ class AnalysisViewController: UIViewController {
     var meData : ChartData = ChartData()
     var othersData : ChartData = ChartData()
     
-    var colors : [NSUIColor] = [NSUIColor.red, NSUIColor.blue, NSUIColor.black, NSUIColor.green, NSUIColor.yellow, NSUIColor.purple, NSUIColor.gray, NSUIColor.brown, NSUIColor.cyan, NSUIColor.systemPink, NSUIColor.orange]
+    var colors : [NSUIColor] = [NSUIColor.red, NSUIColor.blue, NSUIColor.green, NSUIColor.yellow, NSUIColor.purple, NSUIColor.gray, NSUIColor.brown, NSUIColor.cyan, NSUIColor.systemPink, NSUIColor.orange]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,9 @@ class AnalysisViewController: UIViewController {
         LineChartView.pinchZoomEnabled = false
         LineChartView.doubleTapToZoomEnabled = false
         LineChartView.leftAxis.axisMinimum = 0
-        LineChartView.zoomOut()
+        LineChartView.isUserInteractionEnabled = false
+        
+        
 
         
         if #available(iOS 13.0, *) {
@@ -100,6 +102,8 @@ class AnalysisViewController: UIViewController {
         
         meData = ChartData()
         
+
+        
         let formatter = ChartXAxisFormatter()
         var entries = [ChartDataEntry]()
         
@@ -129,7 +133,10 @@ class AnalysisViewController: UIViewController {
             // Fallback on earlier versions
         }
         meData = LineChartData(dataSet: set)
-        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = 0
+        let Nformatter = DefaultValueFormatter(formatter: numberFormatter)
+        meData.setValueFormatter(Nformatter)
 
         let gradientColors = [UIColor.green.cgColor, UIColor.red.cgColor] as CFArray
         let colorLocations:[CGFloat] = [1.0, 0.0]
@@ -142,7 +149,7 @@ class AnalysisViewController: UIViewController {
         set.cubicIntensity = 0.05
         LineChartView.xAxis.valueFormatter = formatter
         set.circleRadius = 5
-        
+
     }
     
     func updateOthersGraph() {
@@ -205,7 +212,10 @@ class AnalysisViewController: UIViewController {
                 // Fallback on earlier versions
             }
             othersData.addDataSet(set)
-            
+            let numberFormatter = NumberFormatter()
+            numberFormatter.maximumFractionDigits = 0
+            let Nformatter = DefaultValueFormatter(formatter: numberFormatter)
+            othersData.setValueFormatter(Nformatter)
 
             
             let gradientColors = [UIColor.green.cgColor, UIColor.red.cgColor] as CFArray

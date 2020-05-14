@@ -43,6 +43,7 @@ class DataLoadViewController: UIViewController {
             UserDefaults.standard.set(empty, forKey: "peers")
             print("set")
         }
+        print(UserDefaults.standard.object(forKey: "peers") as! [String])
     }
     
     override func viewDidAppear(_ animated: Bool) {

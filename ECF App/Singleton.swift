@@ -120,9 +120,9 @@ var playerReference : String = "308000G"
 
 let newestDate = "202001"
 
-var flagDict : [String:String] = ["ENG":"🏴󠁧󠁢󠁥󠁮󠁧󠁿", "USA":"🇺🇸", "RUS":"🇷🇺", "POL":"🇵🇱", "CHN":"🇨🇳", "FRA":"🇫🇷", "NED":"🇳🇱", "UKR":"🇺🇦", "IND":"🇮🇳", "ESP":"🇪🇸", "HUN":"🇭🇺", "ARM":"🇦🇲", "AZE":"🇦🇿", "BLR":"🇧🇾", "SWE":"🇸🇪", "VIE":"🇻🇳", "CZE":"🇨🇿", "CRO":"🇭🇷", "GEO":"🇬🇪", "ISR":"🇮🇱", "ROU":"🇷🇴", "GER":"🇩🇪", "NOR":"🇳🇴", "ITA":"🇮🇹", "MAS":"🇲🇾", "SRB":"🇷🇸", "KAZ":"🇰🇿", "SUI":"🇨🇭", "ISL":"🇮🇸"];
+var flagDict : [String:String] = ["ENG":"🏴󠁧󠁢󠁥󠁮󠁧󠁿", "USA":"🇺🇸", "RUS":"🇷🇺", "POL":"🇵🇱", "CHN":"🇨🇳", "FRA":"🇫🇷", "NED":"🇳🇱", "UKR":"🇺🇦", "IND":"🇮🇳", "ESP":"🇪🇸", "HUN":"🇭🇺", "ARM":"🇦🇲", "AZE":"🇦🇿", "BLR":"🇧🇾", "SWE":"🇸🇪", "VIE":"🇻🇳", "CZE":"🇨🇿", "CRO":"🇭🇷", "GEO":"🇬🇪", "ISR":"🇮🇱", "ROU":"🇷🇴", "GER":"🇩🇪", "NOR":"🇳🇴", "ITA":"🇮🇹", "MAS":"🇲🇾", "SRB":"🇷🇸", "KAZ":"🇰🇿", "SUI":"🇨🇭", "ISL":"🇮🇸", "AUS":"🇦🇺", "UZB":"🇺🇿", "IRI":"🇮🇷", "ARG":"🇦🇷", "GRE":"🇬🇷", "TUR":"🇹🇷"];
 
-var countryList = ["ENG", "USA", "RUS", "POL", "CHN", "FRA", "NED", "UKR", "IND", "ESP", "HUN", "ARM", "AZE", "BLR", "SWE", "VIE", "CZE", "CRO", "GEO", "ISR", "ROU", "GER", "NOR", "ITA", "MAS", "SRB", "KAZ", "SUI", "ISL"]
+var countryList = ["ENG", "USA", "RUS", "POL", "CHN", "FRA", "NED", "UKR", "IND", "ESP", "HUN", "ARM", "AZE", "BLR", "SWE", "VIE", "CZE", "CRO", "GEO", "ISR", "ROU", "GER", "NOR", "ITA", "MAS", "SRB", "KAZ", "SUI", "ISL", "AUS", "UZB", "IRI", "ARG", "GRE", "TUR"]
 
 func countryToFlag(country: String) -> String {
     return flagDict[country]!

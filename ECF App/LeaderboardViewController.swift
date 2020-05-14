@@ -110,6 +110,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
             cell.extraInfo.text = cell.extraInfo.text! + countryToFlag(country: player.nation)
         }
         else {
+            print(player.nation)
             cell.extraInfo.text = cell.extraInfo.text! + player.nation
         }
 

@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.present(myAlert, animated: true, completion: nil)
             
         }
-        selectMeButton.tintColor = UIColor.blue
+        selectMeButton.tintColor = UIColor.systemBlue
         if isDetail {
             selectMeButton.isHidden = false
         }
@@ -59,23 +59,27 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if (UserDefaults.standard.object(forKey: "favourites") as! [String]).contains(playerLookup) {
-            if (UserDefaults.standard.object(forKey: "peers") as! [String]).contains(playerLookup) {
-                favouriteMeButton.setImage(UIImage(named:"peer"), for: .normal)
-                favouriteMeButton.tintColor = UIColor.green
-            }
-            else {
-                favouriteMeButton.setImage(UIImage(named:"filled"), for: .normal)
-                favouriteMeButton.tintColor = UIColor.blue
-            }
-            
-        }
-        else {
-            favouriteMeButton.setImage(UIImage(named:"unfilled"), for: .normal)
-            favouriteMeButton.tintColor = UIColor.blue
-        }
-        
-        reloadData()
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         if (UserDefaults.standard.object(forKey: "favourites") as! [String]).contains(playerLookup) {
+                   if (UserDefaults.standard.object(forKey: "peers") as! [String]).contains(playerLookup) {
+                       favouriteMeButton.setImage(UIImage(named:"peer"), for: .normal)
+                       favouriteMeButton.tintColor = UIColor.green
+                   }
+                   else {
+                       favouriteMeButton.setImage(UIImage(named:"filled"), for: .normal)
+                       favouriteMeButton.tintColor = UIColor.systemBlue
+                   }
+                   
+               }
+               else {
+                   favouriteMeButton.setImage(UIImage(named:"unfilled"), for: .normal)
+                   favouriteMeButton.tintColor = UIColor.systemBlue
+               }
+               
+               reloadData()
     }
     
     func reloadData() {
@@ -212,7 +216,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             print("making peer")
             var new_peers : [String] = peers
             new_peers.append(playerLookup)
-            favouriteMeButton.tintColor = UIColor.green
+            favouriteMeButton.tintColor = UIColor.systemGreen
             UserDefaults.standard.set(new_peers, forKey:"peers")
         }
         else {
@@ -223,7 +227,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             favouriteMeButton.setImage(UIImage(named:"unfilled"), for: .normal)
             UserDefaults.standard.set(new_peers, forKey:"peers")
             UserDefaults.standard.set(new_favs, forKey:"favourites")
-            favouriteMeButton.tintColor = UIColor.blue
+            favouriteMeButton.tintColor = UIColor.systemBlue
         }
         
         

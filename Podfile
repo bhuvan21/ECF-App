@@ -7,7 +7,7 @@ target 'ECF App' do
 
   # Pods for ECF App
   pod 'Charts'
-
+  pod 'SQLite.swift', '~> 0.12.0'
   target 'ECF AppTests' do
     inherit! :search_paths
     # Pods for testing
