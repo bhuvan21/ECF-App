@@ -10,7 +10,7 @@ import UIKit
 
 class PlayerTableViewCell: UITableViewCell {
 
-    
+    // Outlets to needed labels
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var standardRating: UILabel!
     @IBOutlet weak var rapidRating: UILabel!
@@ -20,13 +20,10 @@ class PlayerTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
+// Simple CollectionViewCell with a single label
 class ClubCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var clubLabel: UILabel!
-    
 }

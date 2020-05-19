@@ -10,6 +10,7 @@ import UIKit
 
 class ScoresTableViewCell: UITableViewCell {
 
+    // Outlets for needed Labels
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var standardCategoryLabel: UILabel!
     @IBOutlet weak var standardScoreLabel: UILabel!
@@ -18,13 +19,10 @@ class ScoresTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

@@ -14,18 +14,15 @@ class LeaderboardFilterViewController: UIViewController, UIPickerViewDataSource,
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var wheel: UIPickerView!
     @IBOutlet weak var gameTypeSwitch: UISwitch!
-    
     @IBOutlet weak var ratingShow: UILabel!
-    
     
     var parentVC : LeaderboardViewController? = nil
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         
+        // Set the widgets to reflect the current filter preferences
         slider.setValue(Float(filterPrefs.cap), animated: true)
         if filterPrefs.gameType == "S" {
             gameTypeSwitch.setOn(false, animated: true)
@@ -37,6 +34,7 @@ class LeaderboardFilterViewController: UIViewController, UIPickerViewDataSource,
             wheel.selectRow(0, inComponent: 0, animated: true)
         }
         else {
+            
             wheel.selectRow(1 + countryList.firstIndex(of: filterPrefs.country)!, inComponent: 0, animated: true)
         }
         if filterPrefs.sex == "M" {
@@ -52,16 +50,7 @@ class LeaderboardFilterViewController: UIViewController, UIPickerViewDataSource,
         ratingShow.text = "Rating Cap: " + String(filterPrefs.cap)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // Callback for sex selection segmented control
     @IBAction func sexSelectChanges(_ sender: UISegmentedControl) {
         if segmentControl.selectedSegmentIndex == 0 {
             filterPrefs.sex = "M"
@@ -73,11 +62,14 @@ class LeaderboardFilterViewController: UIViewController, UIPickerViewDataSource,
             filterPrefs.sex = "A"
         }
     }
+    
+    // Callback for rating cap slider
     @IBAction func ratingCapChanges(_ sender: UISlider) {
         filterPrefs.cap = Int(slider.value)
         ratingShow.text = "Rating Cap:" + String(Int(slider.value))
     }
     
+    // Picker delegate methods
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -86,15 +78,17 @@ class LeaderboardFilterViewController: UIViewController, UIPickerViewDataSource,
         return countryList.count + 1
     }
     
+    // Show all countries + ALL option
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if row == 0 {
             return "ALL"
         }
         else {
-            return countryList[row-1] + " " //+ flagDict[countryList[row-1]]!
+            return countryList[row-1] + " "
         }
     }
     
+    // Country select picker view callback
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if row == 0 {
@@ -103,14 +97,14 @@ class LeaderboardFilterViewController: UIViewController, UIPickerViewDataSource,
         else {
             filterPrefs.country = countryList[row-1]
         }
-        
-        
     }
     
+    // When dismissed, update the parent LeaderBoardController with the new filter preferences
     override func viewDidDisappear(_ animated: Bool) {
         parentVC!.refreshData()
     }
     
+    // Callback for game type switch
     @IBAction func typeChanged(_ sender: Any) {
         if gameTypeSwitch.isOn {
             filterPrefs.gameType = "R"
@@ -119,7 +113,4 @@ class LeaderboardFilterViewController: UIViewController, UIPickerViewDataSource,
             filterPrefs.gameType = "S"
         }
     }
-    
-    
-    
 }
