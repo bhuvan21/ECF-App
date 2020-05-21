@@ -14,3 +14,5 @@ A simple iOS app written in Swift to display ECF ratings on the go.
 ## Screenshots
 
 | ![sc1](https://i.imgur.com/GbUFoI3.png) | ![sc2](https://i.imgur.com/5qgp89F.png) | ![sc2](https://i.imgur.com/8K6SVDf.png) |
+|:---------------------------------------:|:---------------------------------------:|:---------------------------------------:|
+| ![sc1](https://i.imgur.com/P6mb7l2.png) | ![sc4](https://i.imgur.com/fzWmlZd.png) | ![sc6](https://i.imgur.com/UQ387H5.png) |
