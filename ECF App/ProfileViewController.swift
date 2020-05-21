@@ -62,13 +62,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         if (UserDefaults.standard.object(forKey: "favourites") as! [String]).contains(playerLookup) {
             if (UserDefaults.standard.object(forKey: "peers") as! [String]).contains(playerLookup) {
                 favouriteMeButton.setImage(UIImage(named:"peer"), for: .normal)
+                favouriteMeButton.tintColor = UIColor.systemGreen
             }
             else {
                 favouriteMeButton.setImage(UIImage(named:"filled"), for: .normal)
+                favouriteMeButton.tintColor = UIColor.systemBlue
             }
         }
         else {
            favouriteMeButton.setImage(UIImage(named:"unfilled"), for: .normal)
+           favouriteMeButton.tintColor = UIColor.systemBlue
        }
        reloadData()
     }
