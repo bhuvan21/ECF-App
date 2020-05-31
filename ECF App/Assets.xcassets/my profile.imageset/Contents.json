@@ -1,21 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "ninblur1.png",
       "idiom" : "universal",
-      "filename" : "profile1.png",
       "scale" : "1x"
     },
     {
+      "filename" : "ninblur2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "ninblur3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

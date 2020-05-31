@@ -527,14 +527,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="test" id="HEC-mg-leH" customClass="ScoresTableViewCell" customModule="ECF_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="354" height="41"/>
+                                        <rect key="frame" x="0.0" y="28" width="354" height="41.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HEC-mg-leH" id="BWC-Rb-wZk">
-                                            <rect key="frame" x="0.0" y="0.0" width="354" height="41"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="41.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gl-iC-KI0">
-                                                    <rect key="frame" x="5" y="10" width="80" height="21"/>
+                                                    <rect key="frame" x="5" y="9.9999999999999982" width="80" height="21.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="mTM-d7-Fpj"/>
                                                     </constraints>
@@ -543,25 +543,25 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9L4-EY-KYA">
-                                                    <rect key="frame" x="100" y="10" width="12" height="21"/>
+                                                    <rect key="frame" x="100" y="9.9999999999999982" width="12" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mmq-GN-aAx">
-                                                    <rect key="frame" x="132" y="10" width="30.666666666666657" height="21"/>
+                                                    <rect key="frame" x="132" y="9.9999999999999982" width="30.666666666666657" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccs-2t-YOZ">
-                                                    <rect key="frame" x="271" y="10" width="12" height="21"/>
+                                                    <rect key="frame" x="271" y="9.9999999999999982" width="12" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyl-32-fmN">
-                                                    <rect key="frame" x="303" y="10" width="31" height="21"/>
+                                                    <rect key="frame" x="303" y="9.9999999999999982" width="31" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -594,14 +594,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="title" id="NWO-6P-2YG" customClass="ScoresTableViewCell" customModule="ECF_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="69" width="354" height="41"/>
+                                        <rect key="frame" x="0.0" y="69.333332061767578" width="354" height="41.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NWO-6P-2YG" id="LK7-Ik-3gh">
-                                            <rect key="frame" x="0.0" y="0.0" width="354" height="41"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="41.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KZ-Fo-ZzJ">
-                                                    <rect key="frame" x="5" y="10" width="60" height="21"/>
+                                                    <rect key="frame" x="5" y="9.9999999999999982" width="60" height="21.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="0qH-G9-93b"/>
                                                     </constraints>
@@ -610,13 +610,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcD-Eg-3g7">
-                                                    <rect key="frame" x="95" y="10" width="70" height="21"/>
+                                                    <rect key="frame" x="95" y="9.9999999999999982" width="70" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rapid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrQ-S4-qok">
-                                                    <rect key="frame" x="275" y="10" width="44" height="21"/>
+                                                    <rect key="frame" x="275" y="9.9999999999999982" width="44" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
