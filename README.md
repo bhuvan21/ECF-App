@@ -1,5 +1,5 @@
 # ECF-App  
-A simple iOS app written in Swift to display ECF ratings on the go.  
+A simple iOS app written in Swift to display ECF ratings on the go, now available on the Apple app store!  
 
 ## Features   
 - Leaderboards  
